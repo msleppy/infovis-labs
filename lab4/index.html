@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 4: D3 Enter and Exit Patterns</title>
+</head>
+
+  <body>
+
+    <!-- Headings and SVGs/Buttons for each activity -->
+    <h2>Activity 1: Squares</h2>
+    <svg id="activity1" width="800" height="200"></svg>
+
+    <h2>Activity 2: Circles</h2>
+    <svg id="activity2" width="800" height="200"></svg>
+    <button id="updateCircles">Update Circles</button>
+  
+    <h2>Activity 3: Cars CSV</h2>
+    <svg id="activity3" width="1600" height="200"></svg>
+    <button id="loadCars">Load Car Data</button>
+
+    <!-- d3 -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script>
+
+    // Activity 1
+    const data1 = [
+      { name: 'London', population: 8674000 },
+      { name: 'New York', population: 8406000 },
+      { name: 'Sydney', population: 4293000 },
+      { name: 'Paris', population: 2244000 },
+      { name: 'Beijing', population: 11510000 }
+    ];
+
+    let svg1 = d3.select("#activity1");
+
+    svg1.selectAll("rect")
+      .data(data1)
+      .join("rect")
+      .attr("fill", "steelblue")
+      .attr("width", d => d.population / 1000000 * 2)
+      .attr("height", d => d.population / 1000000 * 2)
+      .attr("x", (d, i) => i * 120 + 20)
+      .attr("y", 50); 
+
+    // Activity 2
+    function getData2() {
+      let data = [];
+      for (let i = 0; i < 10; i++) {
+        data.push(Math.ceil(Math.random() * 5) * 10);
+      }
+      return data;
+    }
+
+    function updateCircles(data) {
+      let svg2 = d3.select("#activity2");
+
+      svg2.selectAll("*").remove();
+
+      svg2.selectAll("circle")
+        .data(data)
+        .join("circle")
+        .attr("cx", (d, i) => i * 70 + 50)
+        .attr("cy", 100)
+        .attr("r", d => d / 2)
+        .style("fill", "orange")
+        .style("opacity", 0.7);
+    }
+
+    updateCircles(getData2());
+
+    d3.select("#updateCircles")
+      .on("click", () => updateCircles(getData2()));
+
+
+    // Activity 3
+    function createVisualization() {
+      let svg3 = d3.select("#activity3");
+
+      svg3.selectAll("*").remove();
+
+      d3.csv("cars.csv").then(data => {
+
+        data.forEach(d => d.hwy = +d.hwy);
+
+        let scale = d3.scaleLinear()
+          .domain([0, data.length - 1])
+          .range([0, 1400]);
+
+        let axis = d3.axisBottom(scale);
+
+        svg3.selectAll(".car")
+          .data(data)
+          .join("circle")
+          .attr("class", "car")
+          .attr("cx", (d, i) => scale(i))
+          .attr("cy", 80)
+          .attr("r", d => d.hwy / 2)
+          .style("fill", "blue")
+          .style("opacity", 0.7);
+
+        svg3.append("g")
+          .attr("transform", "translate(0,150)")
+          .call(axis);
+      });
+    }
+
+    // Load cars.csv
+    d3.select("#loadCars")
+      .on("click", createVisualization);
+  
+    </script>
+  </body>
+</html>
