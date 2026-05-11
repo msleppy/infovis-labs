@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Madison's Activity 2/3 Webpage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<!-- activity 2 of assignment-->
+<div class="container mt-4">
+    <h1 class="text-center">Welcome to Madison's Styled Webpage :-)</h1>
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <h3>About</h3>
+            <p>Hello! My name is Madison, and I am a senior cybersecurity major!</p>
+        </div>
+        <div class="col-md-6">
+            <h3>Contact</h3>
+            <p>Please enter a valid email address, and I will get back to you shortly!</p>
+        </div>
+    </div>
+
+    <hr>
+
+    <h3>Contact Form</h3>
+    <form id="emailForm" class="needs-validation" novalidate>
+        <div class="mb-3">
+            <label class="form-label">Email Address</label>
+            <input type="email" class="form-control" required>
+            <div class="invalid-feedback">
+                Please enter a valid email.
+            </div>
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+
+    <p id="successMessage" class="text-success mt-3" style="display:none;">
+        Thank you! Your email was submitted successfully
+    </p>
+</div>
+
+<script>
+(() => {
+  'use strict'
+  const form = document.getElementById("emailForm")
+  const successMessage = document.getElementById("successMessage")
+  form.addEventListener("submit", function(event) {
+    event.preventDefault()
+    event.stopPropagation()
+    if (form.checkValidity()) {
+        successMessage.style.display = "block"
+        form.reset()
+        form.classList.remove("was-validated")
+    } else {
+        form.classList.add("was-validated")
+        successMessage.style.display = "none"
+    }
+  })
+})()
+</script>
+
+<!-- activity 3 of assignment-->
+ <script>
+console.log("Hello from the console!");
+console.log("This is the third part of Madison's second lab for CIS-3755!");
+</script>
+
+</body>
+</html>
