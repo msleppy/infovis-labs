@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html>
+    
+    <head> 
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+        <title>Lab 8: Geomap</title>
+
+    </head>
+    
+    <body>
+
+        <h1>Lab 8: Geomap of the United States and its Capital Cities</h1>
+
+        <h2>Activity 1: U.S. Geomap</h2>
+        <svg id="geomap1" width="1200" height="800"></svg>
+
+        <h2>Activity 2: U.S. Geomap with Cities and Population</h2>
+        <svg id="geomap2" width="1200" height="800"></svg>
+
+        <!-- import D3 Version 6 here or at the end of the body -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/6.7.0/d3.min.js"></script>
+        
+        <!-- load topo json file first-->
+         <script src="https://unpkg.com/topojson@3"></script>
+        
+        <!-- load our custom D3 code (must happen after D3 is loaded) -->
+        <script src="./geomap.js"></script>
+
+    </body>
+    
+</html>
