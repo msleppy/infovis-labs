@@ -1,0 +1,57 @@
+{
+  "nodes": [
+    { "id": 1, "name": "Sidney Prescott", "group": "main" },
+    { "id": 2, "name": "Billy Loomis", "group": "killer" },
+    { "id": 3, "name": "Stu Macher", "group": "killer" },
+    { "id": 4, "name": "Tatum Riley", "group": "friend" },
+    { "id": 5, "name": "Dewey Riley", "group": "law" },
+    { "id": 6, "name": "Gale Weathers", "group": "media" },
+    { "id": 7, "name": "Randy Meeks", "group": "friend" },
+    { "id": 8, "name": "Casey Becker", "group": "victim" },
+    { "id": 9, "name": "Steve Orth", "group": "victim" },
+    { "id": 10, "name": "Neil Prescott", "group": "family" },
+    { "id": 11, "name": "Cotton Weary", "group": "suspect" },
+    { "id": 12, "name": "Kenny", "group": "media" },
+    { "id": 13, "name": "Principal Himbry", "group": "school" },
+    { "id": 14, "name": "Ghostface", "group": "killer" }
+  ],
+  "links": [
+    { "source": 1, "target": 2, "relationship": "dating" },
+    { "source": 1, "target": 4, "relationship": "best friends" },
+    { "source": 1, "target": 5, "relationship": "friends" },
+    { "source": 1, "target": 6, "relationship": "conflict" },
+    { "source": 1, "target": 7, "relationship": "friends" },
+    { "source": 1, "target": 10, "relationship": "family" },
+    { "source": 1, "target": 11, "relationship": "mother case" },
+    { "source": 1, "target": 14, "relationship": "targeted by" },
+
+    { "source": 2, "target": 3, "relationship": "partners" },
+    { "source": 2, "target": 4, "relationship": "friends" },
+    { "source": 2, "target": 7, "relationship": "classmates" },
+    { "source": 2, "target": 10, "relationship": "framed" },
+    { "source": 2, "target": 14, "relationship": "is" },
+
+    { "source": 3, "target": 4, "relationship": "dating" },
+    { "source": 3, "target": 7, "relationship": "friends" },
+    { "source": 3, "target": 13, "relationship": "student principal" },
+    { "source": 3, "target": 14, "relationship": "is" },
+
+    { "source": 4, "target": 5, "relationship": "siblings" },
+    { "source": 4, "target": 7, "relationship": "friends" },
+
+    { "source": 5, "target": 6, "relationship": "allies" },
+    { "source": 5, "target": 12, "relationship": "works with" },
+
+    { "source": 6, "target": 12, "relationship": "coworkers" },
+    { "source": 6, "target": 11, "relationship": "interviews case" },
+
+    { "source": 8, "target": 9, "relationship": "dating" },
+    { "source": 8, "target": 14, "relationship": "killed by" },
+    { "source": 9, "target": 14, "relationship": "killed by" },
+
+    { "source": 10, "target": 14, "relationship": "framed by" },
+    { "source": 11, "target": 14, "relationship": "suspected in case" },
+    { "source": 12, "target": 14, "relationship": "killed by" },
+    { "source": 13, "target": 14, "relationship": "killed by" }
+  ]
+}
