@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8" />
+
+    <!-- makes page responsive on different screens -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Lab 10: Scrollytelling</title>
+
+    <!-- style -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- D3 -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+    <!-- waypoints -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- stays on the left side of the screen -->
+    <div class="fixed-viz">
+
+      <!-- SVG where the boxes are -->
+      <svg id="graphic"></svg>
+
+    </div>
+
+    <!-- section 1: initial state/30 black boxes -->
+    <div class="panel" id="div1">
+
+      <div class="viz-placeholder"></div>
+
+      <div class="text-side">
+
+        <h1>This class has 30 students</h1>
+
+        <p>
+          Each black box represents an individual student in our
+          <strong>"Intro to Information Visualization"</strong> class.
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- section 2: brown eyes -->
+    <div class="panel" id="div2">
+
+      <div class="viz-placeholder"></div>
+
+      <div class="text-side">
+
+        <h1>Brown eyes</h1>
+
+        <p>More than <strong>half</strong> of the class has brown eyes!</p>
+
+      </div>
+
+    </div>
+
+    <!-- section 3: blue eyes -->
+    <div class="panel" id="div3">
+
+      <div class="viz-placeholder"></div>
+
+      <div class="text-side">
+
+        <h1>Blue eyes</h1>
+        
+        <p>About a <strong>quarter</strong> of the class has blue eyes!</p>
+
+      </div>
+
+    </div>
+
+    <!-- section 4: green eyes -->
+    <div class="panel" id="div4">
+
+      <div class="viz-placeholder"></div>
+
+      <div class="text-side">
+
+        <h1>Green eyes</h1>
+
+        <p>Only <strong>one student</strong> has green eyes!</p>
+
+      </div>
+
+    </div>
+
+    <!-- JavaScript -->
+    <script src="scroll.js"></script>
+
+  </body>
+
+</html>

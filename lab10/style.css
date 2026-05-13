@@ -1,0 +1,69 @@
+/* style */
+
+/* remove default browser spacing, set base font/colors */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #efefef;
+  color: #666;
+}
+
+/* keep visualization fixed on the left side */
+.fixed-viz {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* prevents the SVG from blocking scrolling/clicking */
+  pointer-events: none; 
+}
+
+/* each panel takes up the full screen height */
+.panel {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0 60px;
+}
+
+/* empty left space, so text stays on right */
+.viz-placeholder {
+  width: 50%;
+}
+
+/* right-side text container */
+.text-side {
+  width: 42%;
+}
+
+/* heading style */
+.text-side h1 {
+  font-size: 44px;
+  margin: 0 0 24px 0;
+  color: #666;
+}
+
+/* paragraph style */
+.text-side p {
+  font-size: 28px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* bold text stand out */
+.text-side strong {
+  font-weight: 700;
+}
+
+/* size of visualization area */
+#graphic {
+  width: 800px;
+  height: 300px;
+}
