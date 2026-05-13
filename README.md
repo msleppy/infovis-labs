@@ -11,8 +11,5 @@ NOTES:
 **THAT THIS REPOSITORY IS IN PROGRESS**
 
 **TO BE ADDED**
-Lab 6
-Lab 7
-Lab 8
-Lab 9 
-Lab 10
+- index.html page for all labs
+- .css stylesheet for master index
