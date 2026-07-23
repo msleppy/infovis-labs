@@ -71,7 +71,7 @@ d3.csv("movie_metadata.csv").then((data) => {
     const arc = d3.arc()
         .innerRadius(0)
         .outerRadius(radius);
-
+    
     svg.selectAll("path")
         .data(pie(genreArray))
         .enter()
