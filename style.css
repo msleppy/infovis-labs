@@ -1,105 +1,98 @@
-body {
-    font-family: Arial, Helvetica, sans-serif;
+* {
     margin: 0;
-    background-color: #f4f6f8;
-    color: #333;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-
-/* Header */
+body {
+    background: #0d1117;
+    color: #f0f6fc;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
 header {
-    background-color: #1f4e79;
-    color: white;
     text-align: center;
-    padding: 40px 20px;
+    padding: 50px 20px;
 }
 
 header h1 {
-    margin: 0 0 10px 0;
-    font-size: 36px;
+    font-size: 2.8rem;
+    color: #58a6ff;
+    margin-bottom: 15px;
 }
 
 header p {
-    font-size: 18px;
+    color: #c9d1d9;
+    font-size: 1.1rem;
 }
 
-
-/* Main Content */
-
 main {
+    max-width: 1000px;
+    margin: auto;
     padding: 20px;
 }
 
-
-.projects {
-    max-width: 1000px;
-    margin: 30px auto;
+.intro {
+    text-align: center;
+    margin-bottom: 40px;
 }
 
-
-/* Project Cards */
-
-.card {
-    background-color: white;
-
-    padding: 25px;
-
-    margin-bottom: 25px;
-
-    border-radius: 10px;
-
-    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.15);
+.intro h2 {
+    color: #58a6ff;
+    margin-bottom: 15px;
 }
 
-
-.card h2 {
-    margin-top: 0;
-    color: #1f4e79;
-}
-
-
-.card p {
+.intro p {
+    color: #8b949e;
     line-height: 1.6;
 }
 
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
 
-/* Links / Buttons */
+.card {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    padding: 25px;
+    text-align: left;
+    transition: transform .2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h2 {
+    color: #58a6ff;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #c9d1d9;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
 
 .card a {
-
     display: inline-block;
-
-    margin-top: 15px;
-
-    padding: 10px 20px;
-
-    background-color: #1f4e79;
-
-    color: white;
-
+    background: #58a6ff;
+    color: #0d1117;
+    padding: 10px 18px;
+    border-radius: 6px;
     text-decoration: none;
-
-    border-radius: 5px;
-
+    font-weight: bold;
 }
-
 
 .card a:hover {
-
-    background-color: #163a5c;
-
+    background: #79c0ff;
 }
 
-
-/* Footer */
-
 footer {
-
     text-align: center;
-
-    padding: 20px;
-
-    color: #666;
-
+    padding: 40px;
+    color: #6e7681;
 }
