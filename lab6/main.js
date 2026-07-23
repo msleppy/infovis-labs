@@ -2,37 +2,42 @@ import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 
 d3.csv("movie_metadata.csv").then((data) => {
 
-
     // filter to remove invalid data 
     const filteredData = data.filter(d => {
 
         if (!d.genres || d.genres.trim() === "") return false;
         if (!d.content_rating || d.content_rating.trim() === "") return false;
+
         return true;
     });
 
     console.log("Rows after filtering:", filteredData.length);
 
-
     // typecast data and only keep needed variables
-const mappedData = filteredData.map(d => ({
-    title: d.movie_title,
-    genre: d.genres,
-    rating: d.content_rating
-}));
+    const mappedData = filteredData.map(d => ({
+        title: d.movie_title,
+        genre: d.genres,
+        rating: d.content_rating
+    }));
 
-console.log("Mapped data sample:");
+    console.log("Mapped data sample:", mappedData.slice(0, 5));
 
     // explore raw groupings
-    const genreGroups = d3.group(mappedData, TODO);
+    const genreGroups = d3.group(mappedData, d => d.genre);
 
     console.log("Movies grouped by genre (raw arrays):");
+
     for (const [genre, movies] of genreGroups) {
         console.log(genre, movies.slice(0,3)); 
         break; 
     }
 
-    // count movies by genre 
+    // Split multiple genres and count movies by genre
+    const allGenres = mappedData.flatMap(d =>
+        d.genre.split("|")
+    );
+
+    // count movies by genre
     const genreCounts = d3.rollup(
         allGenres,
         v => v.length,
